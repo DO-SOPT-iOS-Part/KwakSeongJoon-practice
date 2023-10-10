@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
     }
     
     @IBAction func idTextFieldDidEditing(_ sender: Any) {
@@ -38,10 +38,17 @@ class ViewController: UIViewController {
         pushToResultVC()
     }
     
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        var sliderValue = CGFloat(sender.value)
+        
+        self.view.backgroundColor = UIColor(white: 1, alpha: sliderValue)
+
+    }
+    
     func pushToResultVC() {
         guard let resultVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController else {return}
         resultVC.email = idText
-        resultVC.password = passwordText 
+        resultVC.password = passwordText
         resultVC.delegate = self
         self.navigationController?.pushViewController(resultVC, animated: true)
     }

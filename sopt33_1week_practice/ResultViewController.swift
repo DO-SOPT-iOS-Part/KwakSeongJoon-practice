@@ -28,7 +28,7 @@ class ResultViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
         delegate?.getLoginData(email: self.email, password: self.password)
     }
-    
+
     func bindText() {
         self.emailLabel.text = "email : \(email)"
         self.passwordLabel.text = "password : \(password)"

@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k00-X2-cuO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1666" y="-2"/>
+            <point key="canvasLocation" x="1664.885496183206" y="-2.1126760563380285"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -78,6 +78,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hSg-KM-eCL">
+                                <rect key="frame" x="50" y="374" width="293" height="29"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="idTextFieldDidEditing:" destination="BYZ-38-t0r" eventType="editingChanged" id="c8u-ov-7CB"/>
+                                </connections>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="password" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="W5U-5z-TNB">
                                 <rect key="frame" x="50" y="433" width="293" height="29"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -95,20 +104,18 @@
                                     <action selector="loginButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9sj-lp-gQ4"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hSg-KM-eCL">
-                                <rect key="frame" x="50" y="374" width="293" height="29"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hv2-ak-ihv">
+                                <rect key="frame" x="48" y="627" width="297" height="31"/>
                                 <connections>
-                                    <action selector="idTextFieldDidEditing:" destination="BYZ-38-t0r" eventType="editingChanged" id="c8u-ov-7CB"/>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="m9C-j2-Psl"/>
                                 </connections>
-                            </textField>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="W5U-5z-TNB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="0QL-PA-ldV"/>
+                            <constraint firstItem="Hv2-ak-ihv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="1Kn-82-YrE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W5U-5z-TNB" secondAttribute="trailing" constant="50" id="56R-Qt-bJX"/>
                             <constraint firstItem="W5U-5z-TNB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="5UM-n7-YNb"/>
                             <constraint firstItem="bgm-GN-waK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="60Z-px-vR8"/>
@@ -125,6 +132,7 @@
                             <constraint firstItem="hSg-KM-eCL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="PSb-qk-BqK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hSg-KM-eCL" secondAttribute="trailing" constant="50" id="SHm-d8-UVA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bgm-GN-waK" secondAttribute="trailing" constant="70" id="ShK-ZS-e7H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hv2-ak-ihv" secondAttribute="trailing" constant="50" id="TFF-6a-dv7"/>
                             <constraint firstItem="bgm-GN-waK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="TY7-Zq-w2u"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bgm-GN-waK" secondAttribute="trailing" constant="50" id="TwH-qP-01h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hSg-KM-eCL" secondAttribute="trailing" constant="50" id="UHV-PH-KRT"/>
@@ -150,6 +158,7 @@
                             <constraint firstItem="hSg-KM-eCL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="xdY-1i-zKw"/>
                             <constraint firstItem="W5U-5z-TNB" firstAttribute="top" secondItem="hSg-KM-eCL" secondAttribute="bottom" constant="25" id="yvN-FJ-zAi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hSg-KM-eCL" secondAttribute="trailing" constant="70" id="z3h-68-zex"/>
+                            <constraint firstItem="Hv2-ak-ihv" firstAttribute="top" secondItem="mHC-NX-z7p" secondAttribute="bottom" constant="70" id="z69-Fe-UwE"/>
                             <constraint firstItem="hSg-KM-eCL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="zJ0-bC-IaO"/>
                             <constraint firstItem="W5U-5z-TNB" firstAttribute="top" secondItem="hSg-KM-eCL" secondAttribute="bottom" constant="30" id="zS5-pH-oge"/>
                         </constraints>
