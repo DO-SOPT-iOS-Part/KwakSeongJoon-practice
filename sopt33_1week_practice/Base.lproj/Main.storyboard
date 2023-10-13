@@ -166,6 +166,7 @@
                     <navigationItem key="navigationItem" id="DFR-gQ-JjY"/>
                     <connections>
                         <outlet property="idTExtField" destination="hSg-KM-eCL" id="Yea-Df-TyB"/>
+                        <outlet property="loginButton" destination="mHC-NX-z7p" id="GPi-tH-Vcq"/>
                         <outlet property="passwordTextField" destination="W5U-5z-TNB" id="fGT-R5-DuE"/>
                     </connections>
                 </viewController>
