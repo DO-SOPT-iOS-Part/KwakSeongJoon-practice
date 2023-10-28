@@ -9,6 +9,8 @@ import UIKit
 
 class ThirdSeminarTableViewCell: UITableViewCell {
     
+    var likeTapCompletion: ((Bool) -> Void)?
+    
     static let identifier: String = "ThirdSeminarTableViewCell"
     
     private let stackView = UIStackView().then {
@@ -28,16 +30,21 @@ class ThirdSeminarTableViewCell: UITableViewCell {
         $0.font = .systemFont(ofSize: 12)
         $0.textColor = .systemGray
     }
+    
     private let priceLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 18, weight: .black)
         $0.textColor = .white
     }
-    private let likeButton = UIButton().then {
+    
+    private lazy var likeButton = UIButton().then {
+        $0.addTarget(self,
+                     action: #selector(likeButtonTapped),
+                     for: .touchUpInside)
         $0.setImage(UIImage(systemName: "heart"), for: .normal)
         $0.setImage(UIImage(systemName: "heart.fill"), for: .selected)
     }
     
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -78,5 +85,20 @@ class ThirdSeminarTableViewCell: UITableViewCell {
         [productNameLabel, locationLabel, priceLabel].forEach {
             self.stackView.addArrangedSubview($0)
         }
+    }
+    
+    func bindData(data: ItemListData) {
+        self.productImageView.image = UIImage(named: data.image)
+        self.productNameLabel.text = data.item
+        self.priceLabel.text = data.price
+        self.locationLabel.text = data.location
+        self.likeButton.isSelected = data.isLike
+    }
+    
+    @objc
+    private func likeButtonTapped() {
+        likeButton.isSelected.toggle()
+        guard let likeTapCompletion else {return}
+        likeTapCompletion(likeButton.isSelected)       
     }
 }

@@ -59,7 +59,7 @@ final class MainViewController: UIViewController {
     
 }
 
-extension ViewController: GetDataProtocol {
+extension MainViewController: GetDataProtocol {
     func getLoginData(email: String, password: String) {
         print("받아온 email : \(email), 받아온 password : \(password)")
     }
